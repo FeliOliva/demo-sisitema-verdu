@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Mi Familia App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="demo-aviso" class="modal-overlay">
+      <div class="modal-card">
+        <h2>Aviso de demo</h2>
+        <p>Demo simplificada que representa el flujo básico del sistema.</p>
+        <p>
+          La versión completa incluye gestión avanzada, lógica de negocio y múltiples módulos no expuestos en esta
+          demo.
+        </p>
+        <button id="cerrar-aviso">Entendido</button>
+      </div>
+    </div>
+
+    <header class="header">
+      <h1>Mi Familia App - Demo Local</h1>
+      <p>Simulacion de flujo con almacenamiento en navegador.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Clientes</h2>
+        <form id="cliente-form" class="grid-form">
+          <input id="cliente-nombre" placeholder="Nombre" required />
+          <input id="cliente-apellido" placeholder="Apellido" required />
+          <input id="cliente-telefono" placeholder="Telefono" />
+          <button type="submit">Guardar cliente</button>
+        </form>
+        <ul id="clientes-lista" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Negocios</h2>
+        <form id="negocio-form" class="grid-form">
+          <select id="negocio-cliente" required></select>
+          <input id="negocio-nombre" placeholder="Nombre del negocio" required />
+          <input id="negocio-direccion" placeholder="Direccion" />
+          <button type="submit">Guardar negocio</button>
+        </form>
+        <ul id="negocios-lista" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Productos</h2>
+        <form id="producto-form" class="grid-form">
+          <input id="producto-nombre" placeholder="Nombre" required />
+          <input id="producto-precio" type="number" min="1" placeholder="Precio" required />
+          <input id="producto-medicion" placeholder="Medicion (kg, u, etc.)" required />
+          <button type="submit">Guardar producto</button>
+        </form>
+        <ul id="productos-lista" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Registrar venta</h2>
+        <form id="venta-form" class="grid-form">
+          <select id="venta-cliente" required></select>
+          <select id="venta-negocio" required></select>
+          <select id="venta-producto" required></select>
+          <input id="venta-cantidad" type="number" min="1" value="1" required />
+          <button type="submit">Agregar item</button>
+        </form>
+
+        <div class="venta-preview">
+          <h3>Detalle temporal</h3>
+          <ul id="detalle-temporal" class="list"></ul>
+          <button id="confirmar-venta" class="secondary">Confirmar venta</button>
+        </div>
+      </section>
+
+      <section class="card full">
+        <h2>Ventas registradas</h2>
+        <table id="ventas-tabla">
+          <thead>
+            <tr>
+              <th>Nro Venta</th>
+              <th>Cliente</th>
+              <th>Negocio</th>
+              <th>Total</th>
+              <th>Items</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="reiniciar-demo" class="danger">Reiniciar datos demo</button>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
